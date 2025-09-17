@@ -23,3 +23,8 @@ calcularSubtotal = function (precio, cantidad) {
   return subtotal;
 };
 
+calcularTotal = function (subtotal, descuento, iva) {
+  let total;
+  total = subtotal - descuento + iva;
+  return total;
+}
