@@ -11,3 +11,15 @@ calcularIva = function (monto) {
   return iva;
 };
 
+calcularIva = function (monto) {
+  let iva;
+  iva = monto * 0.12; // Asumiendo un IVA del 12%
+  return iva;
+};
+
+calcularSubtotal = function (precio, cantidad) {
+  let subtotal;
+  subtotal = precio * cantidad;
+  return subtotal;
+};
+
