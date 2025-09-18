@@ -8,4 +8,9 @@ calcularPromedioNotas = function () {
   n3 = recuperarFloat("txtNota3");
   promedio = calcularPromedio(n1, n2, n3);
   mostrarTexto("lblPromedio", "El promedio es: " + promedio.toFixed(2));
+  if (promedio > 7) {
+    mostrarImagen("imgPromedio", "imagenes/aprueba.gif");
+  } else {
+    mostrarImagen("imgPromedio", "imagenes/noaprueba.gif");
+  }
 };
