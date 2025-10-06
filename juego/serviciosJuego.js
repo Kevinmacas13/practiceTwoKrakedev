@@ -24,6 +24,7 @@ generarElemento = function () {
     return cadena3;
   }
 };
+
 determinarGanador = function (eleccionJugador1, eleccionJugador2) {
   if (eleccionJugador1 == eleccionJugador2) {
     return 0;
