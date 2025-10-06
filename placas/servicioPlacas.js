@@ -113,3 +113,23 @@ obtenerTipoVehiculo = function (placa) {
     return "Vehículo particular";
   }
 };
+obtenerDiaPicoyPlaca = function (placa) {
+  let dia;
+  let ultimoDigito;
+  ultimoDigito = parseInt(placa.charAt(placa.length - 1));
+  if (ultimoDigito == 1 || ultimoDigito == 2) {
+    return (dia = "Lunes");
+
+  }
+  else if (ultimoDigito == 3 || ultimoDigito == 4) {
+    return (dia = "Martes");
+  } else if (ultimoDigito == 5 || ultimoDigito == 6) {
+    return (dia = "Miércoles");
+  } else if (ultimoDigito == 7 || ultimoDigito == 8) {
+    return (dia = "Jueves");
+  } else if (ultimoDigito == 9 || ultimoDigito == 0) {
+    return (dia = "Viernes");
+  } else {
+    return "Libre circulación"
+  }
+};
