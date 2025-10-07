@@ -10,7 +10,6 @@ obtenerAleatorio = () => {
   return valorDado;
 };
 
-
 generarElemento = function () {
   let cadena1 = "piedra";
   let cadena2 = "papel";
