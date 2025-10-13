@@ -30,3 +30,39 @@ invertirCadena = function (cadena) {
   }
   return invertida;
 };
+
+buscarLetra = function (cadena, letra) {
+  let letraIterada;
+  let existeLetra = false;
+  for (let i = 0; i < cadena.length; i++) {
+    letraIterada = cadena.charAt(i);
+    if (letraIterada == letra) {
+      existeLetra = true;
+    }
+  }
+  if (existeLetra == true) {
+    console.log("existe");
+  } else {
+    console.log("no existe");
+  }
+};
+
+contarMayusculas = function (cadena) {
+  let letra;
+  let contadorMayusculas = 0;
+  for (let i = 0; i < cadena.length; i++) {
+    letra = cadena.charAt(i);
+    if (esMayuscula(letra)) {
+      contadorMayusculas++;
+    }
+  }
+  console.log("Número de mayúsculas: " + contadorMayusculas);
+};
+
+esMayuscula = function (letra) {
+  if (letra.charCodeAt(0) >= 65 && letra.charCodeAt(0) <= 90) {
+    return true;
+  } else {
+    return false;
+  }
+};
