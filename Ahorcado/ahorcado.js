@@ -44,3 +44,14 @@ mostrarLetra = function (letra, posicion) {
     mostrarTexto("div4", letra);
   }
 };
+
+validar = function (letra) {
+  let letrasEncontradas;
+  for (let i = 0; i < palabraSecreta.length; i++) {
+    let letraIterada = palabraSecreta.charAt(i);
+    if (letraIterada == letra) {
+      mostrarLetra(letra, i);
+      letrasEncontradas++;
+    }
+  }
+};
