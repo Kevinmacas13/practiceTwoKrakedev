@@ -71,10 +71,10 @@ ingresarLetra = function () {
   if (esMayuscula(letra)) {
     validar(letra);
     if (coincidencias == 5) {
-      alert("FELICIDADES, GANASTE");
+      mostrarImagen("ahorcadoImagen", "ganador.gif");
     }
     if (intentos == 10) {
-      alert("HA PERDIDIO");
+      mostrarImagen("ahorcadoImagen", "gameOver.gif");
     }
   } else {
     alert("SOLO SE ACEPTAN LETRAS MAYÚSCULAS");
