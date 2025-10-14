@@ -12,14 +12,17 @@ mostrarOpcionEmpleados = function () {
   mostrarComponente("divEmpleado");
   ocultarComponente("divRol");
   ocultarComponente("divResumen");
+  mostrarImagen("imgEmpleado", "./imagenes/empleado.jpg");
 };
 mostrarOpcionRol = function () {
   mostrarComponente("divRol");
   ocultarComponente("divEmpleado");
   ocultarComponente("divResumen");
+  mostrarImagen("imgRol", "./imagenes/rol.png");
 };
 mostrarOpcionResumen = function () {
   mostrarComponente("divResumen");
   ocultarComponente("divEmpleado");
   ocultarComponente("divRol");
+  mostrarImagen("imgResumen", "./imagenes/resumen.png");
 };
