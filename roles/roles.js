@@ -183,3 +183,12 @@ ejecutarBusqueda = function () {
   }
   console.log("entro");
 };
+
+limpiar = function () {
+  mostrarTextoEnCaja("txtCedula", "");
+  mostrarTextoEnCaja("txtNombre", "");
+  mostrarTextoEnCaja("txtApellido", "");
+  mostrarTextoEnCaja("txtSueldo", "");
+  esNuevo = false;
+  deshabilitarComponentes();
+};
