@@ -146,6 +146,12 @@ guardar = function () {
       }
     }
   }
+
+  deshabilitarComponente("txtCedula");
+  deshabilitarComponente("txtNombre");
+  deshabilitarComponente("txtApellido");
+  deshabilitarComponente("txtSueldo");
+  deshabilitarComponente("btnGuardar");
 };
 esMayuscula = function (letra) {
   if (letra.charCodeAt(0) >= 65 && letra.charCodeAt(0) <= 90) {
