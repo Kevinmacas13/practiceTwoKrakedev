@@ -6,13 +6,40 @@ let empleados = [
     apellido: "Gonzalez",
     sueldo: 900.0,
   },
+  {
+    cedula: "1053579415",
+    nombre: "Miguel",
+    apellido: "Perez",
+    sueldo: 850.0,
+  },
 ];
 
+mostrarEmpleados = function () {
+  let mostrarTabla;
+  mostrarTabla = "<table>";
+  mostrarTabla +=
+    "<tr><th>Cedula</th><th>Nombre</th><th>Apellido</th><th>Sueldo</th></tr>";
+  for (let i = 0; i < empleados.length; i++) {
+    mostrarTabla +=
+      "<tr><td>" +
+      empleados[i].cedula +
+      "</td><td>" +
+      empleados[i].nombre +
+      "</td><td>" +
+      empleados[i].apellido +
+      "</td><td>" +
+      empleados[i].sueldo +
+      "</td></tr>";
+  }
+  mostrarTabla += "</table>";
+  document.getElementById("tablaEmpleados").innerHTML = mostrarTabla;
+};
 mostrarOpcionEmpleados = function () {
   mostrarComponente("divEmpleado");
   ocultarComponente("divRol");
   ocultarComponente("divResumen");
   mostrarImagen("imgEmpleado", "./imagenes/empleado.jpg");
+  mostrarEmpleados();
 };
 mostrarOpcionRol = function () {
   mostrarComponente("divRol");
