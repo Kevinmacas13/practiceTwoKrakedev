@@ -68,3 +68,89 @@ ejecutarNuevo = function () {
   habilitarComponente("btnGuardar");
   esNuevo = true;
 };
+
+buscaEmpleado = function (cedula) {
+  let empleado;
+  let empleadoEncontrado = null;
+  for (i = 0; i < empleados.length; i++) {
+    empleado = empleados[i];
+    if (empleado.cedula == cedula) {
+      empleadoEncontrado = empleados[i];
+
+      break;
+    }
+  }
+  return empleadoEncontrado;
+};
+
+agregarEmpleado = function (empleado) {
+  let existeEmpleado;
+  existeEmpleado = buscaEmpleado(empleado.cedula);
+  if (existeEmpleado == null) {
+    empleados.push(empleado);
+    return true;
+  } else {
+    return false;
+  }
+};
+
+guardar = function () {
+  let cedula = recuperarTexto("txtCedula");
+  let nombre = recuperarTexto("txtNombre");
+  let apellido = recuperarTexto("txtApellido");
+  let sueldo = recuperarFloat("txtSueldo");
+  let cumple = false;
+  if (cedula.length == 10) {
+    cumple = true;
+  } else {
+    cumple = false;
+    mostrarTexto("lblErrorCedula", "Debe tener exactamente 10 caracteres");
+  }
+  if ((nombre.length > 3) & esMayuscula(nombre)) {
+    cumple = true;
+  } else {
+    cumple = false;
+    mostrarTexto(
+      "lblErrorNombre",
+      "todos los carecters deben ser letras mayúsculas"
+    );
+  }
+  if ((apellido.length > 3) & esMayuscula(apellido)) {
+    cumple = true;
+  } else {
+    cumple = false;
+    mostrarTexto(
+      "lblErrorApellido",
+      "al menos 3 mayusculas todos los carecters deben ser letras mayúsculas"
+    );
+  }
+  if (sueldo >= 400 && sueldo <= 5000) {
+    cumple = true;
+  } else {
+    cumple = false;
+    mostrarTexto("lblErrorSueldo", "número flotante entre 400 y 5000");
+  }
+  if (cumple) {
+    if (esNuevo) {
+      let empleado = {};
+      empleado.cedula = cedula;
+      empleado.nombre = nombre;
+      empleado.apellido = apellido;
+      empleado.sueldo = sueldo;
+      let agregado = agregarEmpleado(empleado);
+      if (agregado) {
+        alert("EMPLEADO GUARDADO CORRECTAMENTE");
+        mostrarEmpleados();
+      } else {
+        alert("YA EXISTE UN EMPLEADO CON  LA CEDULA " + empleado.sueldo);
+      }
+    }
+  }
+};
+esMayuscula = function (letra) {
+  if (letra.charCodeAt(0) >= 65 && letra.charCodeAt(0) <= 90) {
+    return true;
+  } else {
+    return false;
+  }
+};
