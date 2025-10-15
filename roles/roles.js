@@ -1,3 +1,4 @@
+let esNuevo = false;
 let empleados = [
   { cedula: "1714616123", nombre: "John", apellido: "Cena", sueldo: 500.0 },
   {
@@ -40,6 +41,11 @@ mostrarOpcionEmpleados = function () {
   ocultarComponente("divResumen");
   mostrarImagen("imgEmpleado", "./imagenes/empleado.jpg");
   mostrarEmpleados();
+  deshabilitarComponente("txtCedula");
+  deshabilitarComponente("txtNombre");
+  deshabilitarComponente("txtApellido");
+  deshabilitarComponente("txtSueldo");
+  deshabilitarComponente("btnGuardar");
 };
 mostrarOpcionRol = function () {
   mostrarComponente("divRol");
@@ -52,4 +58,13 @@ mostrarOpcionResumen = function () {
   ocultarComponente("divEmpleado");
   ocultarComponente("divRol");
   mostrarImagen("imgResumen", "./imagenes/resumen.png");
+};
+
+ejecutarNuevo = function () {
+  habilitarComponente("txtCedula");
+  habilitarComponente("txtNombre");
+  habilitarComponente("txtApellido");
+  habilitarComponente("txtSueldo");
+  habilitarComponente("btnGuardar");
+  esNuevo = true;
 };
