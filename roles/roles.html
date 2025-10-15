@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="roles.css" />
     <title>Roles</title>
   </head>
-  <body onload="mostrarOpcionEmpleados()">
+  <body onload="mostrarOpcionRol()">
     <div class="menu">
       <div class="contenedorBoton">
         <input
@@ -127,7 +127,12 @@
             </div>
           </div>
           <div class="contenedorBoton">
-            <input type="button" value="BUSCAR" class="estiloBoton" />
+            <input
+              type="button"
+              value="BUSCAR"
+              class="estiloBoton"
+              onclick="buscarPorRol()"
+            />
           </div>
         </div>
 

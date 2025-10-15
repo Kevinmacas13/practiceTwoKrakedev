@@ -72,7 +72,6 @@ buscaEmpleado = function (cedula) {
     empleado = empleados[i];
     if (empleado.cedula == cedula) {
       empleadoEncontrado = empleados[i];
-
       break;
     }
   }
@@ -191,4 +190,18 @@ limpiar = function () {
   mostrarTextoEnCaja("txtSueldo", "");
   esNuevo = false;
   deshabilitarComponentes();
+};
+
+buscarPorRol = function () {
+  let cedula = recuperarTexto("txtBusquedaCedulaRol");
+  let empleadoEncontrado;
+  empleadoEncontrado = buscaEmpleado(cedula);
+  if (empleadoEncontrado != null) {
+    mostrarTexto("infoCedula", empleadoEncontrado.cedula);
+    mostrarTexto(
+      "infoNombre",
+      empleadoEncontrado.nombre + " " + empleadoEncontrado.apellido
+    );
+    mostrarTexto("infoSueldo", empleadoEncontrado.sueldo);
+  }
 };
