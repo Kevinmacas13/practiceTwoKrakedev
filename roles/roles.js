@@ -41,11 +41,7 @@ mostrarOpcionEmpleados = function () {
   ocultarComponente("divResumen");
   mostrarImagen("imgEmpleado", "./imagenes/empleado.jpg");
   mostrarEmpleados();
-  deshabilitarComponente("txtCedula");
-  deshabilitarComponente("txtNombre");
-  deshabilitarComponente("txtApellido");
-  deshabilitarComponente("txtSueldo");
-  deshabilitarComponente("btnGuardar");
+  deshabilitarComponentes();
 };
 mostrarOpcionRol = function () {
   mostrarComponente("divRol");
@@ -146,12 +142,7 @@ guardar = function () {
       }
     }
   }
-
-  deshabilitarComponente("txtCedula");
-  deshabilitarComponente("txtNombre");
-  deshabilitarComponente("txtApellido");
-  deshabilitarComponente("txtSueldo");
-  deshabilitarComponente("btnGuardar");
+  deshabilitarComponentes();
 };
 esMayuscula = function (letra) {
   if (letra.charCodeAt(0) >= 65 && letra.charCodeAt(0) <= 90) {
@@ -159,4 +150,12 @@ esMayuscula = function (letra) {
   } else {
     return false;
   }
+};
+
+deshabilitarComponentes = function () {
+  deshabilitarComponente("txtCedula");
+  deshabilitarComponente("txtNombre");
+  deshabilitarComponente("txtApellido");
+  deshabilitarComponente("txtSueldo");
+  deshabilitarComponente("btnGuardar");
 };
