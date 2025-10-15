@@ -205,3 +205,27 @@ buscarPorRol = function () {
     mostrarTexto("infoSueldo", empleadoEncontrado.sueldo);
   }
 };
+
+calcularAporteEmpleado = function (sueldoEmpleado) {
+  let aporte;
+  aporte = (9.45 * sueldoEmpleado) / 100;
+  return aporte;
+};
+
+calcularValorAPagar = function (sueldoEmpleado, aporteIees, descuento) {
+  let valorPagar;
+  valorPagar = sueldoEmpleado - aporteIees - descuento;
+  return valorPagar;
+};
+
+calcularRol = function () {
+  let sueldo = recuperarFloatDiv("infoSueldo");
+  let descuento = null;
+  if (descuento <= 0 && sueldo >= descuento) {
+    descuento = recuperarTexto("txtDescuentos");
+  }
+  let aporteIees = calcularAporteEmpleado(sueldo);
+  let valorAPagar = calcularValorAPagar(sueldo, aporteIees, descuento);
+  mostrarTexto("infoIESS", aporteIees);
+  mostrarTexto("infoPago", valorAPagar);
+};
