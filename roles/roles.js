@@ -316,13 +316,15 @@ mostrarTotales = function () {
   let totalEmpleado = 0;
   let totalEmpleador = 0;
   let totalAPagar = 0;
+  let totalNomina = 0;
   for (let i = 0; i < roles.length; i++) {
     totalEmpleado = totalEmpleado + roles[i].aporteEmpleado;
     totalEmpleador = totalEmpleador + roles[i].aporteEmpleador;
     totalAPagar = totalAPagar + roles[i].valorAPagar;
   }
+  totalNomina = totalEmpleado + totalEmpleador + totalAPagar;
   document.getElementById("infoTotalPago").textContent = totalAPagar;
   document.getElementById("infoAporteEmpleado").textContent = totalEmpleado;
   document.getElementById("infoAporteEmpresa").textContent = totalEmpleador;
-
+  document.getElementById("infoNomina").textContent = totalNomina;
 };
