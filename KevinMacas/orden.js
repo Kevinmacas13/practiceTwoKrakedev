@@ -50,3 +50,47 @@ mostrarTabla = function () {
   tabla += "</table>";
   document.getElementById("tablaPersonas").innerHTML = tabla;
 };
+encontrarMayor = function () {
+  let personaMayor;
+  if (personas.length > 0) {
+    personaMayor = personas[0];
+  }
+  for (let i = 1; i < personas.length; i++) {
+    let elementoPersona = personas[i];
+    console.log(
+      "Nombre: " + elementoPersona.nombre + " Edad: " + elementoPersona.edad
+    );
+    if (elementoPersona.edad > personaMayor.edad) {
+      personaMayor = elementoPersona;
+    }
+  }
+  let mayor = personaMayor;
+  mostrarTexto("infoMayor", "Nombre: " + mayor.nombre + " Edad: " + mayor.edad);
+  return personaMayor;
+};
+
+encontrarMenor = function () {
+  let personaMenor;
+  if (personas.length > 0) {
+    personaMenor = personas[0];
+  }
+  for (let i = 1; i < personas.length; i++) {
+    let elementoPersona = personas[i];
+    console.log(
+      "Nombre: " + elementoPersona.nombre + " Edad: " + elementoPersona.edad
+    );
+    if (elementoPersona.edad < personaMenor.edad) {
+      personaMenor = elementoPersona;
+    }
+  }
+  let menor = personaMenor;
+  mostrarTexto("infoMenor", "Nombre: " + menor.nombre + " Edad: " + menor.edad);
+  return personaMenor;
+};
+
+determinarMayor = function () {
+  encontrarMayor();
+};
+determinarMenor = function () {
+  encontrarMenor();
+};
