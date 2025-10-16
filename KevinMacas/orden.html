@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="orden.css" />
     <title>Orden</title>
   </head>
-  <body>
+  <body onload="mostrarTabla()">
     <div class="area">
       <div class="ingresoDatos">
         <div class="tituloCampo">NOMBRE</div>
@@ -29,11 +29,13 @@
             type="button"
             value="GUARDAR"
             class="estiloBoton"
-            onclick="ejecutarNuevo()"
+            onclick="
+agregarPersona()"
           />
         </div>
       </div>
       <div id="tablaEmpleados" class="areaTabla"></div>
     </div>
+    <div id="tablaPersonas"></div>
   </body>
 </html>

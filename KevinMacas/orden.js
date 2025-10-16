@@ -30,6 +30,23 @@ agregarPersona = function () {
     persona.nombre = nombrePersona;
     persona.edad = edadPersona;
     personas.push(persona);
+
     alert("PERSONA AGREGADA CORRECTAMENTE");
+    mostrarTabla();
   }
+};
+mostrarTabla = function () {
+  let tabla;
+  tabla = "<table>";
+  tabla += "<tr><th>Nombre</th><th>Edad</th></tr>";
+  for (let i = 0; i < personas.length; i++) {
+    tabla +=
+      "<tr><td>" +
+      personas[i].nombre +
+      "</td><td>" +
+      personas[i].edad +
+      "</td></tr>";
+  }
+  tabla += "</table>";
+  document.getElementById("tablaPersonas").innerHTML = tabla;
 };
