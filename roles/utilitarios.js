@@ -68,3 +68,4 @@ recuperarFloatDiv = function (idComponente) {
   let valorFlotante = parseFloat(valorCaja);
   return valorFlotante;
 };
+

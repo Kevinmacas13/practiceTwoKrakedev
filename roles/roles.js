@@ -50,11 +50,14 @@ mostrarOpcionRol = function () {
   ocultarComponente("divResumen");
   mostrarImagen("imgRol", "./imagenes/rol.png");
   deshabilitarComponente("btnGuardar1");
+  mostrarRoles();
+  mostrarTotales();
 };
 mostrarOpcionResumen = function () {
   mostrarComponente("divResumen");
   ocultarComponente("divEmpleado");
   ocultarComponente("divRol");
+
   mostrarImagen("imgResumen", "./imagenes/resumen.png");
 };
 
@@ -282,4 +285,44 @@ guardarRol = function () {
   rol.aporteEmpleador = aporteEmpleador;
   agregarRol(rol);
   deshabilitarComponente("btnGuardar1");
+  mostrarRoles();
+  mostrarTotales();
+};
+
+mostrarRoles = function () {
+  let mostrarTabla;
+  mostrarTabla = "<table>";
+  mostrarTabla +=
+    "<tr><th>CEDULA</th><th>NOMBRE</th><th>VALOR A PAGAR</th><th>APORTE EMPLEADO</th><th>APORTE EMPLEADOR</th></tr>";
+  for (let i = 0; i < roles.length; i++) {
+    mostrarTabla +=
+      "<tr><td>" +
+      roles[i].cedula +
+      "</td><td>" +
+      roles[i].nombre +
+      "</td><td>" +
+      roles[i].valorAPagar +
+      "</td><td>" +
+      roles[i].aporteEmpleado +
+      "</td><td>" +
+      roles[i].aporteEmpleador +
+      "</td></tr>";
+  }
+  mostrarTabla += "</table>";
+  document.getElementById("tablaResumen").innerHTML = mostrarTabla;
+};
+
+mostrarTotales = function () {
+  let totalEmpleado = 0;
+  let totalEmpleador = 0;
+  let totalAPagar = 0;
+  for (let i = 0; i < roles.length; i++) {
+    totalEmpleado = totalEmpleado + roles[i].aporteEmpleado;
+    totalEmpleador = totalEmpleador + roles[i].aporteEmpleador;
+    totalAPagar = totalAPagar + roles[i].valorAPagar;
+  }
+  document.getElementById("infoTotalPago").textContent = totalAPagar;
+  document.getElementById("infoAporteEmpleado").textContent = totalEmpleado;
+  document.getElementById("infoAporteEmpresa").textContent = totalEmpleador;
+
 };
