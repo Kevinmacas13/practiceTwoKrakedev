@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="orden.js"></script>
+    <script src="utilitarios.js"></script>
+    <link rel="stylesheet" href="orden.css" />
+    <title>Orden</title>
+  </head>
+  <body>
+    <div class="area">
+      <div class="ingresoDatos">
+        <div class="tituloCampo">NOMBRE</div>
+        <div>
+          <input type="text" class="cajaTexto" id="txtNombre" />
+          <div class="error" id="lblErrorNombre"></div>
+        </div>
+      </div>
+      <div class="ingresoDatos">
+        <div class="tituloCampo">EDAD</div>
+        <div>
+          <input type="text" class="cajaTexto" id="txtEdad" />
+          <div class="error" id="lblErrorEdad"></div>
+        </div>
+      </div>
+
+      <div class="botones">
+        <div class="contenedorBoton">
+          <input
+            type="button"
+            value="GUARDAR"
+            class="estiloBoton"
+            onclick="ejecutarNuevo()"
+          />
+        </div>
+      </div>
+      <div id="tablaEmpleados" class="areaTabla"></div>
+    </div>
+  </body>
+</html>
